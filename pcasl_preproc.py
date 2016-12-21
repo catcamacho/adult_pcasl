@@ -2,10 +2,13 @@ import os
 import numpy as np
 import nibabel as nib
 import nipy as nip
+import nipype as npe
+from nipype.interfaces.nipy.preprocess import Trim
+trim = Trim()
 
-np.set_printoptions(precision=4, suppress=True)
 path = '/Users/catcamacho/Box Sync/CBFBIRN_practice/210-NART2'
-img = nib.load((path + '/raw/asl.nii.gz'))
+imgFile = path + '/raw/asl.nii.gz'
+img = nib.load(imgFile)
 
 # Determine file type and transform to NIFTI if need be
 
@@ -21,23 +24,35 @@ def getImgMeta(img):
 	return numSlices
 	return numVols
 
-#	return perf pd
-#def splitVols(img,numVols):
-#	aslVol = nib.nifti1.Nifti1Image(img.dataobj[:1]) #helpppp
-#	pdVol = nib.nifti1.Nifti1Image(img.data[1:], img.header) #helpppp
-#	aslVol.save((path + '/aslVol.nii.gz')) #helpppp
-#	pdVol.save((path + '/pdVol.nii.gz')) #helpppp
-#	return pdVol
-#	return aslVol	
+# Separate the asl and pd volumes
+def splitASLvols(imgFile, path):
+	aslVolFile = path + '/aslVol.nii.gz'
+	pdVolFile = path + '/pdVol.nii.gz'
+	
+	trim.inputs.in_file = imgFile 
+	trim.inputs.out_file = aslVolFile
+	trim.inputs.end_index = 1
+	aslVol = trim.run()
+	
+	trim.inputs.out_file = pdVolFile
+	trim.inputs.end_index = 2
+	trim.inputs.begin_index = 1
+	pdVol = trim.run()
+	
+	return aslVolFile
+	return pdVolFile	
 
 # Slice-timing correction
+
 
 # NU correction
 
 # M0 Calculation
-
+# def M0calc(pdVol):
+	
 # Return corrected volume
 
 # Run the defined functions
 getImgMeta(img)
+splitASLvols(imgFile, path)
 
