@@ -11,15 +11,17 @@ st = fsl.SliceTimer()
 
 path = '/Users/catcamacho/Documents/asl_practice/210-NART2'
 imgFile = path + '/raw/asl.nii.gz'
-img = nib.load(imgFile)
 aslVolFile = path + '/aslVol.nii.gz'
 pdVolFile = path + '/pdVol.nii.gz'
-	
+stcorrVolFile = path + '/st_aslVol.nii.gz'
+N3corrVolFile = path + '/nust_aslVol.nii.gz'
+img = nib.load(imgFile)
 
-# Determine file type and transform to NIFTI if need be
+def dataType(imgFile):
+	""" Determine file type and transform to NIFTI if need be. """
 
-# Determine file properties
 def getImgMeta(img):
+	""" Collects file properties to be used as sanity checks down the line. """
 	header = img.header
 	dim = header.get_data_shape()
 	matrix = dim[0:2]
@@ -30,38 +32,50 @@ def getImgMeta(img):
 	return numSlices
 	return numVols
 
-# Separate the asl and pd volumes
 def splitASLvols(imgFile, aslVolFile, pdVolFile):	
+	"""Reads in the combo nifti and and splits the ASL and PD Volumes."""
 	trim.inputs.in_file = imgFile 
 	trim.inputs.out_file = aslVolFile
 	trim.inputs.end_index = 1
-	trim.run()
-	
+	trim.run()	
 	trim.inputs.out_file = pdVolFile
 	trim.inputs.end_index = 2
 	trim.inputs.begin_index = 1
 	trim.run()
 
-# Slice-timing correction
-def sliceTimeASL(aslVolFile, path):
+def sliceTimeASL(aslVolFile, stcorrVolFile):
+	"""Slice timing correction using FSL-need to replace with a custom one."""
 	st.inputs.time_repetition = 4.674
 	st.inputs.slice_direction = 3
 	st.inputs.interleaved = False
 	st.inputs.in_file = aslVolFile
-	st.inputs.out_file = path + '/st_aslVol.nii.gz'
+	st.inputs.out_file = stcorrVol
 	st.inputs.output_type = 'NIFTI_GZ'
 	st.run()
 	
-# NU correction
+def NUcorrectionASL(stcorrVolFile):
+	"""Correct nonuniformity slice by slice low pass filtering via 3D FFT"""
 
+def downsampleAnat:
+	""" Downsample anat to 2mm cubic voxels (FS outputs so no corrections)
+	Also downsample aparc+aseg parcellation (aseg and desikan killany atlas),
+	the WM seg, and the GM seg. """
 
-# M0 Calculation
-# def M0calc(pdVol):
+def upsampleASL:
+	""" Upsample the ASL volume interpolating the neighboring values. Final
+	voxel size will be 2mm cubed. """
+
+def coregisterVols:
+	""" Coregister the two inputed volumes. Apply same transformation matrix
+	to the freesurfer segmentation volumes."""
+
+def M0calc(pdVol):
+	""" Calculate M0 value from the PD volume. """
+	pd = nib.load(pdVol)
 	
-# Return corrected volume
-
 # Run the defined functions
 getImgMeta(img)
 splitASLvols(imgFile, aslVolFile, pdVolFile)
-sliceTimeASL(aslVolFile, path)
-
+sliceTimeASL(aslVolFile, stcorrVolFile)
+NUcorrectionASL(stcorrVolFile)
+M0calc(pdVol)
