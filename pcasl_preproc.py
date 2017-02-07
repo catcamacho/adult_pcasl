@@ -17,10 +17,10 @@ stcorrVolFile = path + '/st_aslVol.nii.gz'
 N3corrVolFile = path + '/nust_aslVol.nii.gz'
 img = nib.load(imgFile)
 
-def dataType(imgFile):
+def data_type(imgFile):
 	""" Determine file type and transform to NIFTI if need be. """
 
-def getImgMeta(img):
+def get_img_meta(img):
 	""" Collects file properties to be used as sanity checks down the line. """
 	header = img.header
 	dim = header.get_data_shape()
@@ -28,7 +28,8 @@ def getImgMeta(img):
 	numSlices = dim[2]
 	numVols = dim[3]
 	
-	return matrix
+	# I know this is wrong, will fix later
+	return matrix 
 	return numSlices
 	return numVols
 
@@ -43,7 +44,7 @@ def splitASLvols(imgFile, aslVolFile, pdVolFile):
 	trim.inputs.begin_index = 1
 	trim.run()
 
-def sliceTimeASL(aslVolFile, stcorrVolFile):
+def slicetimeASL(aslVolFile, stcorrVolFile):
 	"""Slice timing correction using FSL-need to replace with a custom one."""
 	st.inputs.time_repetition = 4.674
 	st.inputs.slice_direction = 3
@@ -56,18 +57,18 @@ def sliceTimeASL(aslVolFile, stcorrVolFile):
 def NUcorrectionASL(stcorrVolFile):
 	"""Correct nonuniformity slice by slice low pass filtering via 3D FFT"""
 
-def downsampleAnat:
-	""" Downsample anat to 2mm cubic voxels (FS outputs so no corrections)
-	Also downsample aparc+aseg parcellation (aseg and desikan killany atlas),
+def downsample_anat:
+	""" Downsample anat to 2mm cubic voxels (FS/iBEAT outputs so no corrections)
+	Also downsample aparc+aseg parcellation (if applicable; aseg and desikan killany atlas),
 	the WM seg, and the GM seg. """
 
 def upsampleASL:
 	""" Upsample the ASL volume interpolating the neighboring values. Final
 	voxel size will be 2mm cubed. """
 
-def coregisterVols:
+def coregister_vols:
 	""" Coregister the two inputed volumes. Apply same transformation matrix
-	to the freesurfer segmentation volumes."""
+	to the segmentation volumes."""
 
 def M0calc(pdVol):
 	""" Calculate M0 value from the PD volume. """
