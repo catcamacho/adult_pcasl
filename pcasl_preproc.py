@@ -28,7 +28,7 @@ def data_type(img):
 
 def get_img_meta(img):
     """
-    Collects file properties to be used as sanity checks down the line.
+    Collect file properties to be used as sanity checks down the line.
     """
     header = img.header
     dim = header.get_data_shape()
@@ -43,7 +43,7 @@ def get_img_meta(img):
 
 def split_asl_vols(img, asl_vol_file, pd_vol_file):
     """
-    Reads in the combo nifti and and splits the ASL and PD Volumes.
+    Read in the combo nifti and and split the ASL and PD Volumes.
     """
     trim.inputs.in_file = img
     trim.inputs.out_file = asl_vol_file
@@ -57,7 +57,7 @@ def split_asl_vols(img, asl_vol_file, pd_vol_file):
 
 def slicetime_asl(asl_vol_file, st_corr_vol):
     """
-    Slice timing correction using FSL-need to replace with a custom one.
+    Correct slice timing using FSL-need to replace with a custom one.
     """
     st.inputs.time_repetition = 4.674
     st.inputs.slice_direction = 3
@@ -84,7 +84,7 @@ def downsample_anat:
     pass
 
 
-def upsampleASL:
+def upsample_asl:
     """
     Upsample the ASL volume interpolating the neighboring values. Final
     voxel size will be 2mm cubed.
