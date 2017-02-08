@@ -25,13 +25,10 @@ def get_img_meta(img):
 	header = img.header
 	dim = header.get_data_shape()
 	matrix = dim[0:2]
-	numSlices = dim[2]
-	numVols = dim[3]
-	
-	# I know this is wrong, will fix later
-	return matrix 
-	return numSlices
-	return numVols
+	numslices = dim[2]
+	numvols = dim[3]	
+	dimensions = {'matrix':matrix, 'numslices':numslices, 'numvols':numvols}
+	return dimensions
 
 def splitASLvols(imgFile, aslVolFile, pdVolFile):	
 	"""Reads in the combo nifti and and splits the ASL and PD Volumes."""
