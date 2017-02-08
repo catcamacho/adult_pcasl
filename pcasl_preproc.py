@@ -28,6 +28,8 @@ def get_img_meta(img):
 	numslices = dim[2]
 	numvols = dim[3]	
 	dimensions = {'matrix':matrix, 'numslices':numslices, 'numvols':numvols}
+
+	print dimensions
 	return dimensions
 
 def splitASLvols(imgFile, aslVolFile, pdVolFile):	
