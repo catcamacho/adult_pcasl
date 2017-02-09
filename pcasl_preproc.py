@@ -11,15 +11,15 @@ trim = Trim()
 st = fsl.SliceTimer()
 
 path = '/Users/catcamacho/Documents/asl_practice/210-NART2'
-imgFile = path + '/raw/asl.nii.gz'
-aslVolFile = path + '/aslVol.nii.gz'
-pdVolFile = path + '/pdVol.nii.gz'
-stcorrVolFile = path + '/st_aslVol.nii.gz'
-N3corrVolFile = path + '/nust_aslVol.nii.gz'
-img = nib.load(imgFile)
+img_file = path + '/raw/asl.nii.gz'
+asl_vol_file = path + '/aslVol.nii.gz'
+pd_vol_file = path + '/pdVol.nii.gz'
+st_corr_vol_file = path + '/st_aslVol.nii.gz'
+n3_corr_vol_file = path + '/nust_aslVol.nii.gz'
+img_data = nib.load(img_file)
 
 
-def data_type(img):
+def data_type(img_file):
     """
     Determine file type and transform to NIFTI if need be.
     """
@@ -41,7 +41,7 @@ def get_img_meta(img):
     return dimensions
 
 
-def split_asl_vols(img, asl_vol_file, pd_vol_file):
+def split_asl_vols(img_file, asl_vol_file, pd_vol_file):
     """
     Read in the combo nifti and and split the ASL and PD Volumes.
     """
@@ -55,7 +55,7 @@ def split_asl_vols(img, asl_vol_file, pd_vol_file):
     trim.run()
 
 
-def slicetime_asl(asl_vol_file, st_corr_vol):
+def slicetime_asl(asl_vol_file, st_corr_vol_file):
     """
     Correct slice timing using FSL-need to replace with a custom one.
     """
@@ -68,14 +68,14 @@ def slicetime_asl(asl_vol_file, st_corr_vol):
     st.run()
 
 
-def nonuniformity_correction_asl(st_corr_vol):
+def nonuniformity_correction_asl(st_corr_vol_file):
     """
     Correct nonuniformity slice by slice low pass filtering via 3D FFT
     """
     pass
 
 
-def downsample_anat:
+def downsample_anat():
     """
     Downsample anat to 2mm cubic voxels (FS/iBEAT outputs so no corrections)
     Also downsample aparc+aseg parcellation (if applicable; aseg and desikan
@@ -84,7 +84,7 @@ def downsample_anat:
     pass
 
 
-def upsample_asl:
+def upsample_asl():
     """
     Upsample the ASL volume interpolating the neighboring values. Final
     voxel size will be 2mm cubed.
@@ -92,7 +92,7 @@ def upsample_asl:
     pass
 
 
-def coregister_vols:
+def coregister_vols():
     """
     Coregister the two inputed volumes. Apply same transformation matrix
     to the segmentation volumes.
@@ -108,11 +108,11 @@ def calculate_m0(pd_vol):
 
 
 def main():
-    getImgMeta(img)
-    split_asl_vols(imgFile, aslVolFile, pdVolFile)
-    slicetime_asl(aslVolFile, stcorrVolFile)
-    nonuniformity_correction_asl(stcorrVolFile)
-    calculate_m0(pdVol)
+    get_img_meta(img)
+    split_asl_vols(img_file, asl_vol_file, pd_vol_file)
+    slicetime_asl(asl_vol_file, st_corr_vol_file)
+    nonuniformity_correction_asl(st_corr_vol_file)
+    calculate_m0(pd_vol)
 
 if __name__ == '__main__':
     main()
