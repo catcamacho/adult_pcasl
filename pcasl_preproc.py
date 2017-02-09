@@ -106,9 +106,13 @@ def calculate_m0(pd_vol):
     """
     pd = nib.load(pd_vol)
 
-# Run the defined functions
-getImgMeta(img)
-split_asl_vols(imgFile, aslVolFile, pdVolFile)
-slicetime_asl(aslVolFile, stcorrVolFile)
-nonuniformity_correction_asl(stcorrVolFile)
-calculate_m0(pdVol)
+
+def main():
+    getImgMeta(img)
+    split_asl_vols(imgFile, aslVolFile, pdVolFile)
+    slicetime_asl(aslVolFile, stcorrVolFile)
+    nonuniformity_correction_asl(stcorrVolFile)
+    calculate_m0(pdVol)
+
+if __name__ == '__main__':
+    main()
