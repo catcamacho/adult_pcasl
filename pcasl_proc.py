@@ -20,7 +20,6 @@ def coregister(ref_volume,target_volume):
     """	
     pass
 
-
 def segment_anat(anat_volume):
     """
   	Uses SPM to segment GM, WM, and CSF tissue.
@@ -32,4 +31,11 @@ def register_to_standard(brain_data, standard_brain):
   	Affine registration to a template brain.
     """
 	pass
-	
+
+def mask_funct(brain_volume,mask_volume):
+    """
+  	Uses fslmaths to remove all non-GM voxels.
+    """
+    #fslmaths wrcbf.nii -mas c1wspgr.nii wrcbf_gm.nii
+	pass
+
