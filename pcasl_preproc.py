@@ -75,23 +75,11 @@ def n3_correction(vol_file):
     
     pass
 
-def coregister_vols():
-    """
-    Coregister the two inputed volumes. Apply same transformation matrix
-    to the segmentation volumes.
-    """
-    pass
-
-
 def calculate_m0(pd_vol):
     """
     Calculate M0 value from the PD volume.
     """
     pd = nib.load(pd_vol)
-    pass
-
-def plot_funct():
-
     pass
 
 
