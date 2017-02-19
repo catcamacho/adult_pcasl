@@ -75,24 +75,6 @@ def n3_correction(vol_file):
     
     pass
 
-
-def downsample_anat():
-    """
-    Downsample anat to 2mm cubic voxels (FS/iBEAT outputs so no corrections)
-    Also downsample aparc+aseg parcellation (if applicable; aseg and desikan
-    killany atlas), the WM seg, and the GM seg.
-    """
-    pass
-
-
-def upsample_asl():
-    """
-    Upsample the ASL volume interpolating the neighboring values. Final
-    voxel size will be 2mm cubed.
-    """
-    pass
-
-
 def coregister_vols():
     """
     Coregister the two inputed volumes. Apply same transformation matrix
