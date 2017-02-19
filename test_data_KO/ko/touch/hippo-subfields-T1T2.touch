@@ -1,0 +1,1 @@
+/Applications/freesurfer/bin/segmentSF_T1T2.sh /Applications/freesurfer/MCRv80 /Applications/freesurfer ko /Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir /Volumes/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/raw/ko/T2w.nii.gz right hippocampus

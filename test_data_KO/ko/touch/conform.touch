@@ -1,0 +1,1 @@
+mri_convert /Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/mri/rawavg.mgz /Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/mri/orig.mgz --conform

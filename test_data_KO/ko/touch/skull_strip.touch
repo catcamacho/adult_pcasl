@@ -1,0 +1,1 @@
+mri_watershed -rusage /Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/touch/rusage.mri_watershed.dat -T1 -brain_atlas /Applications/freesurfer/average/RB_all_withskull_2016-03-21.gca transforms/talairach_with_skull.lta T1.mgz brainmask.auto.mgz

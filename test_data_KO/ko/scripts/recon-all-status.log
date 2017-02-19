@@ -1,0 +1,97 @@
+status file for recon-all
+Wed May  4 14:27:36 PDT 2016
+#@# T2/FLAIR Input Wed May  4 14:27:48 PDT 2016
+#@# MotionCor Wed May  4 14:28:25 PDT 2016
+#@# Talairach Wed May  4 14:28:40 PDT 2016
+#@# Talairach Failure Detection Wed May  4 14:36:40 PDT 2016
+#@# Nu Intensity Correction Wed May  4 14:36:42 PDT 2016
+#@# Intensity Normalization Wed May  4 14:43:42 PDT 2016
+#@# Skull Stripping Wed May  4 14:45:43 PDT 2016
+recon-all -s ko finished without error at Wed May  4 14:57:52 PDT 2016
+\n\n
+New invocation of recon-all 
+\n\n
+status file for recon-all
+Wed May  4 15:22:30 PDT 2016
+#@# Sphere lh Wed May  4 15:22:30 PDT 2016
+Darwin myelin.stanford.edu 14.5.0 Darwin Kernel Version 14.5.0: Mon Jan 11 18:48:35 PST 2016; root:xnu-2782.50.2~1/RELEASE_X86_64 x86_64
+
+recon-all -s ko exited with ERRORS at Wed May  4 15:22:30 PDT 2016
+
+\n\n
+New invocation of recon-all 
+\n\n
+status file for recon-all
+Wed May  4 15:23:04 PDT 2016
+#@# EM Registration Wed May  4 15:23:05 PDT 2016
+#@# CA Normalize Wed May  4 15:33:04 PDT 2016
+#@# CA Reg Wed May  4 15:34:22 PDT 2016
+#@# Remove Neck Wed May  4 17:32:29 PDT 2016
+#@# SubCort Seg Wed May  4 17:33:33 PDT 2016
+#@# Merge ASeg Wed May  4 18:03:44 PDT 2016
+#@# Intensity Normalization2 Wed May  4 18:03:44 PDT 2016
+#@# Mask BFS Wed May  4 18:06:59 PDT 2016
+#@# WM Segmentation Wed May  4 18:07:02 PDT 2016
+#@# Fill Wed May  4 18:08:46 PDT 2016
+#@# Tessellate lh Wed May  4 18:09:21 PDT 2016
+#@# Tessellate rh Wed May  4 18:09:34 PDT 2016
+#@# Smooth1 lh Wed May  4 18:09:47 PDT 2016
+#@# Smooth1 rh Wed May  4 18:09:58 PDT 2016
+#@# Inflation1 lh Wed May  4 18:10:09 PDT 2016
+#@# Inflation1 rh Wed May  4 18:10:39 PDT 2016
+#@# QSphere lh Wed May  4 18:11:10 PDT 2016
+#@# QSphere rh Wed May  4 18:13:57 PDT 2016
+#@# Fix Topology Copy lh Wed May  4 18:16:43 PDT 2016
+#@# Fix Topology Copy rh Wed May  4 18:16:44 PDT 2016
+#@# Fix Topology lh Wed May  4 18:16:45 PDT 2016
+#@# Fix Topology rh Wed May  4 18:34:18 PDT 2016
+#@# Make White Surf lh Wed May  4 18:50:55 PDT 2016
+#@# Make White Surf rh Wed May  4 18:55:29 PDT 2016
+#@# Smooth2 lh Wed May  4 18:59:58 PDT 2016
+#@# Smooth2 rh Wed May  4 19:00:08 PDT 2016
+#@# Inflation2 lh Wed May  4 19:00:18 PDT 2016
+#@# Inflation2 rh Wed May  4 19:00:48 PDT 2016
+#@# Curv .H and .K lh Wed May  4 19:01:18 PDT 2016
+#@# Curv .H and .K rh Wed May  4 19:02:15 PDT 2016
+#@# Curvature Stats lh Wed May  4 19:03:13 PDT 2016
+#@# Curvature Stats rh Wed May  4 19:03:22 PDT 2016
+#@# Sphere lh Wed May  4 19:03:31 PDT 2016
+#@# Sphere rh Wed May  4 19:46:23 PDT 2016
+#@# Surf Reg lh Wed May  4 20:05:22 PDT 2016
+#@# Surf Reg rh Wed May  4 20:58:13 PDT 2016
+#@# Jacobian white lh Wed May  4 21:38:05 PDT 2016
+#@# Jacobian white rh Wed May  4 21:38:08 PDT 2016
+#@# AvgCurv lh Wed May  4 21:38:10 PDT 2016
+#@# AvgCurv rh Wed May  4 21:38:13 PDT 2016
+#@# Cortical Parc lh Wed May  4 21:38:15 PDT 2016
+#@# Cortical Parc rh Wed May  4 21:38:31 PDT 2016
+#@# Make Pial Surf lh Wed May  4 21:38:47 PDT 2016
+#@# Make Pial Surf rh Wed May  4 21:46:52 PDT 2016
+#@# Refine Pial Surfs w/ T2/FLAIR Wed May  4 21:54:59 PDT 2016
+#@# Surf Volume lh Wed May  4 23:06:31 PDT 2016
+#@# Surf Volume rh Wed May  4 23:06:40 PDT 2016
+#@# Cortical ribbon mask Wed May  4 23:06:48 PDT 2016
+#@# Parcellation Stats lh Wed May  4 23:18:53 PDT 2016
+#@# Parcellation Stats rh Wed May  4 23:20:09 PDT 2016
+#@# Cortical Parc 2 lh Wed May  4 23:21:26 PDT 2016
+#@# Cortical Parc 2 rh Wed May  4 23:21:49 PDT 2016
+#@# Parcellation Stats 2 lh Wed May  4 23:22:11 PDT 2016
+#@# Parcellation Stats 2 rh Wed May  4 23:22:53 PDT 2016
+#@# Cortical Parc 3 lh Wed May  4 23:23:38 PDT 2016
+#@# Cortical Parc 3 rh Wed May  4 23:23:56 PDT 2016
+#@# Parcellation Stats 3 lh Wed May  4 23:24:15 PDT 2016
+#@# Parcellation Stats 3 rh Wed May  4 23:24:54 PDT 2016
+#@# WM/GM Contrast lh Wed May  4 23:25:30 PDT 2016
+#@# WM/GM Contrast rh Wed May  4 23:25:48 PDT 2016
+#@# Relabel Hypointensities Wed May  4 23:26:05 PDT 2016
+#@# AParc-to-ASeg aparc Wed May  4 23:26:25 PDT 2016
+#@# AParc-to-ASeg a2009s Wed May  4 23:28:06 PDT 2016
+#@# AParc-to-ASeg DKTatlas Wed May  4 23:29:52 PDT 2016
+#@# APas-to-ASeg Wed May  4 23:31:46 PDT 2016
+#@# ASeg Stats Wed May  4 23:31:53 PDT 2016
+#@# WMParc Wed May  4 23:35:07 PDT 2016
+#@# BA_exvivo Labels lh Wed May  4 23:42:50 PDT 2016
+#@# BA_exvivo Labels rh Wed May  4 23:47:20 PDT 2016
+#@# Hippocampal Subfields processing (T1 + T2 volume) left Wed May  4 23:51:50 PDT 2016
+#@# Hippocampal Subfields processing (T1 + T2 volume) right Thu May  5 00:43:32 PDT 2016
+recon-all -s ko finished without error at Thu May  5 01:31:09 PDT 2016

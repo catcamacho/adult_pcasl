@@ -1,0 +1,192 @@
+/Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/mri
+/Applications/freesurfer/bin/mri_nu_correct.mni
+--i orig.mgz --o nu.mgz --uchar transforms/talairach.xfm --n 2
+nIters 2
+$Id: FreeSurferEnv.csh,v 1.88 2016/03/29 21:39:43 zkaufman Exp $
+Darwin myelin.stanford.edu 14.5.0 Darwin Kernel Version 14.5.0: Mon Jan 11 18:48:35 PST 2016; root:xnu-2782.50.2~1/RELEASE_X86_64 x86_64
+Wed May  4 14:36:42 PDT 2016
+Program nu_correct, built from:
+Package MNI N3, version 1.12.0, compiled by nicks@gust.nmr.mgh.harvard.edu (x86_64-apple-darwin11.4.2) on 2015-06-19 at 15:37:08
+tmpdir is ./tmp.mri_nu_correct.mni.79917
+/Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/mri
+mri_convert orig.mgz ./tmp.mri_nu_correct.mni.79917/nu0.mnc -odt float
+mri_convert.bin orig.mgz ./tmp.mri_nu_correct.mni.79917/nu0.mnc -odt float 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from orig.mgz...
+TR=6.24, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+changing data type from uchar to float (noscale = 0)...
+writing to ./tmp.mri_nu_correct.mni.79917/nu0.mnc...
+ 
+--------------------------------------------------------
+Iteration 1 Wed May  4 14:36:46 PDT 2016
+nu_correct -clobber ./tmp.mri_nu_correct.mni.79917/nu0.mnc ./tmp.mri_nu_correct.mni.79917/nu1.mnc -tmpdir ./tmp.mri_nu_correct.mni.79917/0/
+[myelin@myelin.stanford.edu:/Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/mri/] [2016-05-04 14:36:46] running:
+  /Applications/freesurfer/mni/bin/nu_estimate_np_and_em -parzen -log -sharpen 0.15 0.01 -iterations 50 -stop 0.001 -shrink 4 -auto_mask -nonotify -b_spline 1.0e-7 -distance 200 -quiet -execute -clobber -nokeeptmp -tmpdir ./tmp.mri_nu_correct.mni.79917/0/ ./tmp.mri_nu_correct.mni.79917/nu0.mnc ./tmp.mri_nu_correct.mni.79917/nu1.imp
+
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Number of iterations: 31 
+CV of field change: 0.000974545
+ 
+ 
+--------------------------------------------------------
+Iteration 2 Wed May  4 14:39:53 PDT 2016
+nu_correct -clobber ./tmp.mri_nu_correct.mni.79917/nu1.mnc ./tmp.mri_nu_correct.mni.79917/nu2.mnc -tmpdir ./tmp.mri_nu_correct.mni.79917/1/
+[myelin@myelin.stanford.edu:/Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/mri/] [2016-05-04 14:39:53] running:
+  /Applications/freesurfer/mni/bin/nu_estimate_np_and_em -parzen -log -sharpen 0.15 0.01 -iterations 50 -stop 0.001 -shrink 4 -auto_mask -nonotify -b_spline 1.0e-7 -distance 200 -quiet -execute -clobber -nokeeptmp -tmpdir ./tmp.mri_nu_correct.mni.79917/1/ ./tmp.mri_nu_correct.mni.79917/nu1.mnc ./tmp.mri_nu_correct.mni.79917/nu2.imp
+
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Number of iterations: 28 
+CV of field change: 0.000997117
+ 
+ 
+ 
+mri_binarize --i ./tmp.mri_nu_correct.mni.79917/nu2.mnc --min -1 --o ./tmp.mri_nu_correct.mni.79917/ones.mgz
+
+$Id: mri_binarize.c,v 1.42 2016/01/07 22:23:57 greve Exp $
+cwd /Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/mri
+cmdline mri_binarize.bin --i ./tmp.mri_nu_correct.mni.79917/nu2.mnc --min -1 --o ./tmp.mri_nu_correct.mni.79917/ones.mgz 
+sysname  Darwin
+hostname myelin.stanford.edu
+machine  x86_64
+user     myelin
+
+input      ./tmp.mri_nu_correct.mni.79917/nu2.mnc
+frame      0
+nErode3d   0
+nErode2d   0
+output     ./tmp.mri_nu_correct.mni.79917/ones.mgz
+Binarizing based on threshold
+min        -1
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 16777216 values in range
+Counting number of voxels in first frame
+Found 16777216 voxels in final mask
+Count: 16777216 16777216.000000 16777216 100.000000
+mri_binarize done
+mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.79917/ones.mgz --i orig.mgz --sum ./tmp.mri_nu_correct.mni.79917/sum.junk --avgwf ./tmp.mri_nu_correct.mni.79917/input.mean.dat
+
+$Id: mri_segstats.c,v 1.120 2016/03/02 22:30:05 greve Exp $
+cwd 
+cmdline mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.79917/ones.mgz --i orig.mgz --sum ./tmp.mri_nu_correct.mni.79917/sum.junk --avgwf ./tmp.mri_nu_correct.mni.79917/input.mean.dat 
+sysname  Darwin
+hostname myelin.stanford.edu
+machine  x86_64
+user     myelin
+UseRobust  0
+Loading ./tmp.mri_nu_correct.mni.79917/ones.mgz
+Loading orig.mgz
+Voxel Volume is 1 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to ./tmp.mri_nu_correct.mni.79917/input.mean.dat
+mri_segstats done
+mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.79917/ones.mgz --i ./tmp.mri_nu_correct.mni.79917/nu2.mnc --sum ./tmp.mri_nu_correct.mni.79917/sum.junk --avgwf ./tmp.mri_nu_correct.mni.79917/output.mean.dat
+
+$Id: mri_segstats.c,v 1.120 2016/03/02 22:30:05 greve Exp $
+cwd 
+cmdline mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.79917/ones.mgz --i ./tmp.mri_nu_correct.mni.79917/nu2.mnc --sum ./tmp.mri_nu_correct.mni.79917/sum.junk --avgwf ./tmp.mri_nu_correct.mni.79917/output.mean.dat 
+sysname  Darwin
+hostname myelin.stanford.edu
+machine  x86_64
+user     myelin
+UseRobust  0
+Loading ./tmp.mri_nu_correct.mni.79917/ones.mgz
+Loading ./tmp.mri_nu_correct.mni.79917/nu2.mnc
+Voxel Volume is 1 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to ./tmp.mri_nu_correct.mni.79917/output.mean.dat
+mri_segstats done
+mris_calc -o ./tmp.mri_nu_correct.mni.79917/nu2.mnc ./tmp.mri_nu_correct.mni.79917/nu2.mnc mul 1.13045700082672709711
+mri_convert ./tmp.mri_nu_correct.mni.79917/nu2.mnc nu.mgz --like orig.mgz
+mri_convert.bin ./tmp.mri_nu_correct.mni.79917/nu2.mnc nu.mgz --like orig.mgz 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from ./tmp.mri_nu_correct.mni.79917/nu2.mnc...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+INFO: transform src into the like-volume: orig.mgz
+writing to nu.mgz...
+mri_make_uchar nu.mgz transforms/talairach.xfm nu.mgz
+type change took 0 minutes and 9 seconds.
+mapping (13, 60) to ( 3, 110)
+ 
+ 
+Wed May  4 14:43:40 PDT 2016
+mri_nu_correct.mni done

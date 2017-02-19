@@ -1,0 +1,1 @@
+mris_register -curv -rusage /Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/touch/rusage.mris_register.lh.dat ../surf/lh.sphere /Applications/freesurfer/average/lh.curvature.buckner40.2016-03-20.tif ../surf/lh.sphere.reg
