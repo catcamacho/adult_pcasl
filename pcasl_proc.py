@@ -34,7 +34,7 @@ def register_to_standard(brain_data, standard_brain):
 
 def mask_funct(brain_volume,mask_volume):
     """
-  	Uses fslmaths to remove all non-GM voxels.
+  	Uses fslmaths to remove all non-brain voxels.
     """
     #fslmaths wrcbf.nii -mas c1wspgr.nii wrcbf_gm.nii
 	pass
