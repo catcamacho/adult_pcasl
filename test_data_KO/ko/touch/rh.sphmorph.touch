@@ -1,1 +1,0 @@
-mris_sphere -rusage /Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/touch/rusage.mris_sphere.rh.dat -seed 1234 ../surf/rh.inflated ../surf/rh.sphere

@@ -1,9 +1,0 @@
-Logfile for pctsurfcon
-Wed May  4 23:25:49 PDT 2016
-setenv SUBJECTS_DIR /Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir
-cd /Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/scripts
-/Applications/freesurfer/bin/pctsurfcon
-$Id: FreeSurferEnv.csh,v 1.88 2016/03/29 21:39:43 zkaufman Exp $
-Darwin myelin.stanford.edu 14.5.0 Darwin Kernel Version 14.5.0: Mon Jan 11 18:48:35 PST 2016; root:xnu-2782.50.2~1/RELEASE_X86_64 x86_64
-FREESURFER_HOME /Applications/freesurfer
-Cleaning up

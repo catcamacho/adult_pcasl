@@ -1,1 +1,0 @@
-mri_em_register -rusage /Volumes/group/iang/users/camachoMC/freesurfer_playground/freesurfer6.0/subjs_dir/ko/touch/rusage.mri_em_register.dat -uns 3 -mask brainmask.mgz nu.mgz /Applications/freesurfer/average/RB_all_2016-03-21.gca transforms/talairach.lta
