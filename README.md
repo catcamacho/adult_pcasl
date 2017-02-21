@@ -9,4 +9,5 @@ numpy
 matplotlib
 nipype
 nibabel
-pygraphviz
+graphviz
+pydotplus
