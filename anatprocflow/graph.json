@@ -1,0 +1,46 @@
+[
+    {
+        "group": 1,
+        "imports": [],
+        "name": "0_selectfiles",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "0_selectfiles"
+        ],
+        "name": "1_bbregister",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [],
+        "name": "2_fssource",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [],
+        "name": "3_realign",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "3_realign",
+            "1_bbregister",
+            "2_fssource"
+        ],
+        "name": "4_applyVolTrans",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "4_applyVolTrans"
+        ],
+        "name": "5_binarize",
+        "size": 1
+    }
+]
