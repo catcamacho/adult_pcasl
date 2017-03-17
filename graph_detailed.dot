@@ -1,0 +1,27 @@
+digraph structs {
+node [shape=record];
+anatprocflowinfosource [label="{IN}|{ infosource | utility |  }|{OUT|<outsubjid> subjid}"];
+anatprocflowselectfiles [label="{IN|<insubjid> subjid}|{ selectfiles | io |  }|{OUT|<outcbf> cbf}"];
+anatprocflowbbregister [label="{IN|<insourcefile> source_file|<insubjectid> subject_id}|{ bbregister | freesurfer |  }|{OUT|<outoutregfile> out_reg_file}"];
+anatprocflowfssource [label="{IN|<insubjectid> subject_id}|{ fssource | io |  }|{OUT|<outbrainmask> brainmask}"];
+anatprocflowmri_convert [label="{IN|<ininfile> in_file}|{ mri_convert | freesurfer |  }|{OUT|<outoutfile> out_file}"];
+anatprocflowapplyVolTrans [label="{IN|<inregfile> reg_file|<insourcefile> source_file|<insubject> subject|<intargetfile> target_file}|{ applyVolTrans | freesurfer |  }|{OUT|<outtransformedfile> transformed_file}"];
+anatprocflowbinarize [label="{IN|<ininfile> in_file}|{ binarize | freesurfer |  }|{OUT|<outbinaryfile> binary_file}"];
+anatprocflowapplyMask [label="{IN|<ininfile> in_file|<inmaskfile> mask_file}|{ applyMask | fsl |  }|{OUT|<outoutfile> out_file}"];
+anatprocflowdatasink [label="{IN|<inbinaryanat> binary_anat|<inmaskedcbf> masked_cbf|<inreganat> reg_anat}|{ datasink | io |  }|{OUT}"];
+anatprocflowapplyMask:outoutfile:e -> anatprocflowdatasink:inmaskedcbf:w;
+anatprocflowapplyVolTrans:outtransformedfile:e -> anatprocflowbinarize:ininfile:w;
+anatprocflowapplyVolTrans:outtransformedfile:e -> anatprocflowdatasink:inreganat:w;
+anatprocflowbbregister:outoutregfile:e -> anatprocflowapplyVolTrans:inregfile:w;
+anatprocflowbinarize:outbinaryfile:e -> anatprocflowapplyMask:inmaskfile:w;
+anatprocflowbinarize:outbinaryfile:e -> anatprocflowdatasink:inbinaryanat:w;
+anatprocflowfssource:outbrainmask:e -> anatprocflowmri_convert:ininfile:w;
+anatprocflowinfosource:outsubjid:e -> anatprocflowapplyVolTrans:insubject:w;
+anatprocflowinfosource:outsubjid:e -> anatprocflowbbregister:insubjectid:w;
+anatprocflowinfosource:outsubjid:e -> anatprocflowfssource:insubjectid:w;
+anatprocflowinfosource:outsubjid:e -> anatprocflowselectfiles:insubjid:w;
+anatprocflowmri_convert:outoutfile:e -> anatprocflowapplyVolTrans:intargetfile:w;
+anatprocflowselectfiles:outcbf:e -> anatprocflowapplyMask:ininfile:w;
+anatprocflowselectfiles:outcbf:e -> anatprocflowapplyVolTrans:insourcefile:w;
+anatprocflowselectfiles:outcbf:e -> anatprocflowbbregister:insourcefile:w;
+}
