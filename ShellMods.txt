@@ -1,0 +1,23 @@
+#MATLAB command line stuff
+set path = ($path /Applications/MATLAB_R2015a.app/bin)
+alias matlab '/Applications/MATLAB_R2015a.app/bin/matlab -nodesktop'
+
+# Add CMake to commandline tools
+set path = ($path /Applications/CMake.app/Contents/bin)
+
+# Add ANTs bin to path
+setenv ANTSPATH /Applications/ANTSbin/bin
+set path = ($path $ANTSPATH)
+
+# add c3d tools
+set path = ($path /Applications/Convert3DGUI.app/Contents/bin)
+
+#Set up FSL
+setenv FSLDIR /usr/local/fsl
+setenv PATH ${FSLDIR}/bin:${PATH}
+source ${FSLDIR}/etc/fslconf/fsl.csh
+
+#Set up FSL
+setenv FSLDIR /usr/local/fsl
+setenv PATH ${FSLDIR}/bin:${PATH}
+source ${FSLDIR}/etc/fslconf/fsl.csh
